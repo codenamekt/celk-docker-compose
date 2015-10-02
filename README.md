@@ -4,13 +4,13 @@ Run the cELK (collectd, Elasticseach, Logstash, Kibana) stack with Docker and Do
 
 Based on the official images:
 
-* [elasticsearch](https://registry.hub.docker.com/_/elasticsearch/)
-* [logstash](https://registry.hub.docker.com/_/logstash/)
-* [kibana](https://registry.hub.docker.com/_/kibana/)
+* [elasticsearch image](https://registry.hub.docker.com/_/elasticsearch/)
+* [logstash image](https://registry.hub.docker.com/_/logstash/)
+* [kibana image](https://registry.hub.docker.com/_/kibana/)
 
 And unofficial ..
 
-* [collectd](https://hub.docker.com/r/yaronr/collectd/)
+* [collectd image](https://hub.docker.com/r/yaronr/collectd/)
 
 # Requirements
 
@@ -39,6 +39,12 @@ When the stack starts you will immediately start seeing stats from collectd get 
 Access Kibana UI by hitting [http://localhost:5601](http://localhost:5601) with a web browser to view the statistics.
 
 By default, the stack exposes the following ports:
+
 * 5000: Logstash TCP input.
 * 9200: Elasticsearch HTTP (with Marvel plugin accessible via [http://localhost:9200/_plugin/marvel](http://localhost:9200/_plugin/marvel))
 * 5601: Kibana 4 web interface
+
+# Thanks
+
+* [Elastic](https://www.elastic.co)
+* [deviantony/docker-elk](https://github.com/deviantony/docker-elk)
