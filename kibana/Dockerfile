@@ -1,3 +1,3 @@
 FROM kibana:latest
 
-CMD ["elasticsearch"]
+ADD kibana.yml /opt/kibana/config/kibana.yml

@@ -1,2 +1,3 @@
-FROM debian:latest
-RUN apt-get update && apt-get -y install collectd
+FROM yaronr/collectd
+
+ADD collectd.conf /etc/collectd/collectd.conf

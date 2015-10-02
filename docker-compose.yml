@@ -1,35 +1,27 @@
-collectd:
-  hostname: collectd01
-  domainname: collectd01.com
-  image: yaronr/collectd
-  ports:
-   - "25826:25826/udp"
-  volumes:
-    - ./collectd/collectd.conf:/etc/collectd/collectd.conf
-  links:
-   - logstash
-
+# Not built
 elasticsearch:
   image: elasticsearch:latest
-  volumes:
-    - /root/es/:/usr/share/elasticsearch/data
   ports:
     - "9200:9200"
 
 logstash:
-  image: logstash:latest
-  command: logstash agent -f /etc/logstash/conf.d/logstash.conf
-  volumes:
-    - ./logstash/logstash.conf:/etc/logstash/conf.d/logstash.conf
+  build: logstash/
   ports:
     - "5000:5000"
   links:
     - elasticsearch
 
+collectd:
+  hostname: collectd01
+  domainname: collectd01.com
+  build: collectd/
+  ports:
+   - "25826:25826/udp"
+  links:
+   - logstash
+
 kibana:
-  image: kibana:latest
-  volumes:
-    - ./kibana/kibana.yml:/opt/kibana/config/kibana.yml
+  build: kibana/
   ports:
     - "5601:5601"
   links:
