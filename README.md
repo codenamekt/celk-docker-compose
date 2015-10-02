@@ -15,21 +15,15 @@
 
 # Usage
 
-Start the stack using *docker-compose*:
-
-```bash
-$ docker-compose up
-```
-
-You can also choose to run it in background (detached mode):
+Start the stack in the background using *docker-compose*:
 
 ```bash
 $ docker-compose up -d
 ```
 
-When the stack starts you will immediately start seeing stats from collectd get pushed into the ELK stack via collectd. Stats like cpu, memory and load.
+You will immediately start seeing stats (cpu, memory, load) getting pushed into the ELK stack via collectd.
 
-Access Kibana UI by hitting [http://localhost:5601](http://localhost:5601) with a web browser to view the statistics.
+Access the Kibana UI by hitting [http://localhost:5601](http://localhost:5601) with a web browser to view the statistics.
 
 ![Kibana](screenshot.png?raw=true "Kibana")
 
