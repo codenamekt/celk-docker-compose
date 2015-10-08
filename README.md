@@ -1,4 +1,4 @@
-# Docker cELK stack
+# Docker celk stack
 
 |Service  | Base Image | Port |
 |--------:|:----------:|:----:|
@@ -12,6 +12,12 @@
 1. Install [Docker](http://docker.io).
 2. Install [Docker Compose](http://docs.docker.com/compose/install/).
 3. `git clone git@github.com:codenamekt/celk-docker-compose.git`
+
+# Enable Marvel
+
+Marvel is available on the elastic image. Just create a custom `Dockerfile` with:
+
+`RUN plugin -i elasticsearch/marvel/latest`
 
 # Usage
 
